@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>...</title>
     <link rel="preload" as="image" href="/assets/background.png"/>
+    <link rel="preload" as="image" href="/assets/background_mobile.png"/>
     <link rel="preload" as="image" href="/assets/title.png"/>
     <link rel="preload" as="image" href="/assets/flower_desel.png"/>
     <link rel="preload" as="image" href="/assets/flower_info.png"/>
@@ -27,7 +28,10 @@
         }
 
         body {
-            background: url("/assets/background.png") no-repeat center center fixed;
+            background-image: url("/assets/background.png");
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
             background-size: cover;
         }
 
@@ -102,6 +106,10 @@
         }
 
         @media (max-width: 1150px) {
+            body {
+                background-image: url("/assets/background_mobile.png");
+            }
+
             .body-wrapper {
                 flex-direction: column;
                 align-items: center;
@@ -131,7 +139,7 @@
             #flowerInfo, #tabletInfo {
                 margin-left: -85px;
                 margin-top: -100px;
-                width: 55%;
+                width: 460px;
             }
         }
     </style>
