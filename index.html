@@ -105,6 +105,23 @@
             }
         }
 
+        @media (max-width: 1450px) {
+            .selector {
+                width: 50%;
+            }
+            .left, .right{
+                flex-grow: 6;
+            }
+            .summary {
+                flex-grow: 5;
+            }
+            #flowerInfo, #tabletInfo {
+                width: 25%;
+                margin-top: -80px;
+                margin-left: 30px;
+            }
+        }
+
         @media (max-width: 1150px) {
             body {
                 background-image: url("/assets/background_mobile.png");
@@ -119,6 +136,10 @@
             .title-wrapper img {
                 margin-top: -0;
                 margin-bottom: 20px;
+            }
+
+            .selector {
+                width: initial;
             }
 
             .left {
