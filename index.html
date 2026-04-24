@@ -89,10 +89,10 @@
 
         @media (max-width: 1600px) {
             .left, .right{
-                flex: 6;
+                flex-grow: 6;
             }
             .summary {
-                flex: 5;
+                flex-grow: 5;
             }
             #flowerInfo, #tabletInfo {
                 width: 35%;
@@ -114,21 +114,24 @@
             }
 
             .left {
+                flex-grow: initial;
                 order: 2;
-                height: 550px;
+                height: 580px;
             }
             .summary {
+                flex-grow: initial;
                 order: 1;
             }
             .right {
+                flex-grow: initial;
                 order: 3;
-                height: 550px;
+                height: 580px;
             }
 
             #flowerInfo, #tabletInfo {
-                margin-left: -10px;
-                margin-top: -50px;
-                width: 90%;
+                margin-left: -85px;
+                margin-top: -100px;
+                width: 55%;
             }
         }
     </style>
