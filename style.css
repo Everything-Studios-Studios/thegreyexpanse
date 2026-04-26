@@ -95,7 +95,7 @@ body {
 }
 @media (min-width: 1400px) {
   .summary {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     min-width: 550px;
   }
 }
