@@ -1,0 +1,133 @@
+@font-face {
+  font-family: "CourierPS";
+  src: url("/assets/CourierPS.woff2") format("woff2"), url("/assets/CourierPS.woff") format("woff"), url("/assets/CourierPS.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  background-image: url("/assets/background_mobile.png");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "CourierPS", monospace;
+  padding-bottom: env(safe-area-inset-bottom, 2rem);
+}
+@media (min-width: 800px) {
+  body {
+    background-image: url("/assets/background.png");
+  }
+}
+
+.title-wrapper {
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.body-wrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: 1350px;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: space-between;
+}
+@media (min-width: 800px) {
+  .body-wrapper {
+    flex-direction: row;
+    margin-top: -25px;
+  }
+}
+
+.left {
+  flex-grow: 1;
+  order: 2;
+}
+@media (min-width: 800px) {
+  .left {
+    order: 1;
+  }
+}
+
+.summary {
+  color: white;
+  display: flex;
+  font-size: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  order: 1;
+  text-shadow: white 1px 0 10px;
+}
+@media (min-width: 300px) and (max-width: 400px) {
+  .summary {
+    font-size: 1rem;
+    min-width: 250px;
+  }
+}
+@media (min-width: 400px) and (max-width: 800px) {
+  .summary {
+    font-size: 1.25rem;
+    min-width: 250px;
+  }
+}
+@media (min-width: 800px) {
+  .summary {
+    flex-grow: 3;
+    font-size: 1rem;
+    min-width: 250px;
+    order: 2;
+  }
+}
+@media (min-width: 1000px) {
+  .summary {
+    font-size: 1.25rem;
+    min-width: 350px;
+  }
+}
+@media (min-width: 1200px) {
+  .summary {
+    font-size: 1.25rem;
+    min-width: 450px;
+  }
+}
+@media (min-width: 1400px) {
+  .summary {
+    font-size: 1.25rem;
+    min-width: 550px;
+  }
+}
+.summary > * {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.right {
+  flex-grow: 1;
+  order: 3;
+}
+
+.selector {
+  cursor: pointer;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: clamp(90px, 50%, 350px);
+}
+
+.info--image {
+  margin-top: -15%;
+  width: 100%;
+}
+
+.info--hidden {
+  cursor: initial;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.hidden {
+  display: none;
+}
