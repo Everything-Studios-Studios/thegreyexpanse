@@ -26,6 +26,21 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
+@media (min-width: 600px) {
+  .title-wrapper {
+    margin-top: -20px;
+  }
+}
+@media (min-width: 800px) {
+  .title-wrapper {
+    margin-top: -30px;
+  }
+}
+@media (min-width: 1000px) {
+  .title-wrapper {
+    margin-top: -40px;
+  }
+}
 
 .body-wrapper {
   display: flex;
