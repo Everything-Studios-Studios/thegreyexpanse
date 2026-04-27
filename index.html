@@ -16,186 +16,7 @@
     <link rel="preload" as="font" href="/assets/CourierPS.woff2"/>
     <link rel="preload" as="font" href="/assets/CourierPS.woff"/>
     <link rel="preload" as="font" href="/assets/CourierPS.ttf"/>
-    <style>
-        @font-face {
-            font-family: 'CourierPS';
-            src: url('/assets/CourierPS.woff2') format('woff2'),
-                url('/assets/CourierPS.woff') format('woff'),
-                url('/assets/CourierPS.ttf') format('truetype');
-            font-weight: normal;
-            font-style: normal;
-            font-display: swap;
-        }
-
-        body {
-            background-image: url("/assets/background.png");
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            padding-bottom: env(safe-area-inset-bottom, 2rem);
-        }
-
-        .title-wrapper {
-            max-width: 1024px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .body-wrapper {
-            display: flex;
-            flex-direction: row;
-            max-width: 1350px;
-            margin-left: auto;
-            margin-right: auto;
-            justify-content: space-between;
-        }
-
-        .title-wrapper img {
-            margin-top: -40px;
-        }
-
-        .left {
-            order: 1;
-        }
-        .summary {
-            order: 2;
-            color: white;
-            font-family: "CourierPS", monospace;
-            font-size: 1.5rem;
-            text-shadow: white 1px 0 10px;
-            margin-top: -50px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .right {
-            order: 3;
-        }
-
-        .selector {
-            display: block;
-            position: relative;
-            z-index: 100;
-            margin: 0 auto;
-        }
-        .info {
-            position: relative;
-        }
-        .info-element {
-            position: absolute;
-            margin-top: -150px;
-            margin-left: -220px;
-            z-index: 50;
-        }
-
-        .pointer {
-            cursor: pointer;
-        }
-        .hidden {
-            display: none;
-        }
-
-        @media (max-width: 1600px) {
-            .left, .right{
-                flex-grow: 6;
-            }
-            .summary {
-                flex-grow: 5;
-            }
-            #flowerInfo, #tabletInfo {
-                width: 35%;
-                margin-top: -80px;
-                margin-left: -15px;
-            }
-        }
-
-        @media (max-width: 1450px) {
-            .selector {
-                width: 50%;
-            }
-            .left, .right{
-                flex-grow: 6;
-            }
-            .summary {
-                flex-grow: 5;
-            }
-            #flowerInfo, #tabletInfo {
-                width: 25%;
-                margin-top: -80px;
-                margin-left: 30px;
-            }
-        }
-
-        @media (max-width: 1150px) {
-            body {
-                background-image: url("/assets/background_mobile.png");
-            }
-
-            .body-wrapper {
-                flex-direction: column;
-                align-items: center;
-                width: 100%;
-            }
-
-            .title-wrapper img {
-                margin-top: -0;
-                margin-bottom: 20px;
-            }
-
-            .selector {
-                width: initial;
-            }
-
-            .left {
-                flex-grow: initial;
-                order: 2;
-                height: 580px;
-            }
-            .summary {
-                flex-grow: initial;
-                order: 1;
-            }
-            .right {
-                flex-grow: initial;
-                order: 3;
-                height: 580px;
-            }
-
-            #flowerInfo, #tabletInfo {
-                margin-left: -85px;
-                margin-top: -100px;
-                width: 460px;
-            }
-        }
-
-        @media (max-width: 450px) {
-            .left, .right {
-                height: 490px;
-            }
-            #flowerInfo, #tabletInfo {
-                margin-left: -30px;
-                width: 350px;
-            }
-        }
-
-        @media (max-width: 320px) {
-            .summary {
-                font-size: 1rem;
-                padding-top: 1rem;
-            }
-            .selector {
-                width: 75%;
-            }
-            .left, .right {
-                height: 390px;
-            }
-            #flowerInfo, #tabletInfo {
-                margin-top: -80px;
-                margin-left: 10px;
-                width: 280px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
     <div class="title-wrapper">
@@ -204,16 +25,12 @@
     <div class="body-wrapper">
         <div class="left" class="info">
             <input type="checkbox" id="flowerCheckbox" class="hidden">
-            <img src="/assets/flower_desel.png" id="flowerDeselected" class="selector pointer">
-            <img src="/assets/flower_select.png" id="flowerSelected" class="selector pointer hidden">
-            <br>
-            <img src="/assets/flower_info.png" id="flowerInfo" class="info-element hidden" usemap="#flowerMap">
-            <map name="flowerMap">
-                <area target="_blank" alt="Click to play Macabre Moricide" title="Macabre Moricide" href="https://gamebanana.com/mods/667999" coords="116,433,674,494" shape="rect">
-            </map>
+            <img src="/assets/flower_desel.png" id="flowerDeselected" class="selector">
+            <img src="/assets/flower_select.png" id="flowerSelected" class="selector hidden">
+            <a id="flowerInfo" class="info info--hidden" href="https://gamebanana.com/mods/667999"><img src="/assets/flower_info.png" class="info--image" usemap="#flowerMap"></a>
         </div>
         <div class="summary">
-            <div class="summary-container">
+            <div>
                 <p>
                     This is the<br>
                     place in space<br>
@@ -237,10 +54,9 @@
         </div>
         <div class="right" class="info">
             <input type="checkbox" id="tabletCheckbox" class="hidden">
-            <img src="/assets/tablet_desel.png" id="tabletDeselected" class="selector pointer">
-            <img src="/assets/tablet_select.png" id="tabletSelected" class="selector pointer hidden">
-            <br>
-            <img src="/assets/tablet_info.png" id="tabletInfo" class="info-element hidden">
+            <img src="/assets/tablet_desel.png" id="tabletDeselected" class="selector">
+            <img src="/assets/tablet_select.png" id="tabletSelected" class="selector hidden">
+            <a id="tabletInfo" class="info info--hidden"><img src="/assets/tablet_info.png" class="info--image"></a>
         </div>
     </div>
     <script>
@@ -276,12 +92,12 @@
                     checkBox.checked = false;
                     desel.classList.remove("hidden");
                     sel.classList.add("hidden");
-                    popup.classList.add("hidden");
+                    popup.classList.add("info--hidden");
                 } else {
                     checkBox.checked = true;
                     desel.classList.add("hidden");
                     sel.classList.remove("hidden");
-                    popup.classList.remove("hidden");
+                    popup.classList.remove("info--hidden");
                 }
             };
 
