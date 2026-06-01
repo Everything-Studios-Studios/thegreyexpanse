@@ -10,9 +10,9 @@
     <link rel="preload" as="image" href="/assets/flower_desel.png"/>
     <link rel="preload" as="image" href="/assets/flower_info.png"/>
     <link rel="preload" as="image" href="/assets/flower_select.png"/>
-    <link rel="preload" as="image" href="/assets/tablet_desel.png"/>
-    <link rel="preload" as="image" href="/assets/tablet_info.png"/>
-    <link rel="preload" as="image" href="/assets/tablet_select.png"/>
+    <link rel="preload" as="image" href="/assets/logs_desel.png"/>
+    <link rel="preload" as="image" href="/assets/logs_info.png"/>
+    <link rel="preload" as="image" href="/assets/logs_select.png"/>
     <link rel="preload" as="font" href="/assets/CourierPS.woff2"/>
     <link rel="preload" as="font" href="/assets/CourierPS.woff"/>
     <link rel="preload" as="font" href="/assets/CourierPS.ttf"/>
@@ -53,10 +53,10 @@
             </div>
         </div>
         <div class="right" class="info">
-            <input type="checkbox" id="tabletCheckbox" class="hidden">
-            <img src="/assets/tablet_desel.png" id="tabletDeselected" class="selector">
-            <img src="/assets/tablet_select.png" id="tabletSelected" class="selector hidden">
-            <a id="tabletInfo" class="info info--hidden"><img src="/assets/tablet_info.png" class="info--image"></a>
+            <input type="checkbox" id="logsCheckbox" class="hidden">
+            <img src="/assets/logs_desel.png" id="logsDeselected" class="selector">
+            <img src="/assets/logs_select.png" id="logsSelected" class="selector hidden">
+            <a id="logsInfo" class="info info--hidden"><img src="/assets/logs_info.png" class="info--image"></a>
         </div>
     </div>
     <script>
@@ -68,14 +68,14 @@
             const flowerSelected = document.getElementById("flowerSelected");
             const flowerInfo = document.getElementById("flowerInfo");
 
-            const tabletCheckbox = /** @type {HTMLInputElement|null} */ (document.getElementById("tabletCheckbox"));
-            const tabletDeselected = document.getElementById("tabletDeselected");
-            const tabletSelected = document.getElementById("tabletSelected");
-            const tabletInfo = document.getElementById("tabletInfo");
+            const logsCheckbox = /** @type {HTMLInputElement|null} */ (document.getElementById("logsCheckbox"));
+            const logsDeselected = document.getElementById("logsDeselected");
+            const logsSelected = document.getElementById("logsSelected");
+            const logsInfo = document.getElementById("logsInfo");
 
             if (
                 (flowerCheckbox == null || flowerDeselected == null || flowerSelected == null || flowerInfo == null)
-                || (tabletCheckbox == null || tabletDeselected == null || tabletSelected == null || tabletInfo == null)
+                || (logsCheckbox == null || logsDeselected == null || logsSelected == null || logsInfo == null)
             ) {
                 alert("missing required elements");
                 return;
@@ -108,11 +108,11 @@
                 toggle(flowerCheckbox, flowerDeselected, flowerSelected, flowerInfo);
             });
 
-            tabletDeselected.addEventListener("click", () => {
-                toggle(tabletCheckbox, tabletDeselected, tabletSelected, tabletInfo);
+            logsDeselected.addEventListener("click", () => {
+                toggle(logsCheckbox, logsDeselected, logsSelected, logsInfo);
             });
-            tabletSelected.addEventListener("click", () => {
-                toggle(tabletCheckbox, tabletDeselected, tabletSelected, tabletInfo);
+            logsSelected.addEventListener("click", () => {
+                toggle(logsCheckbox, logsDeselected, logsSelected, logsInfo);
             });
         })();
     </script>
